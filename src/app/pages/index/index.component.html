@@ -1,0 +1,16 @@
+
+<div class="container-fluid mx-auto">
+  <div class='row d-flex mt-3 mx-auto'>
+  <!-- <div class='row d-flex mt-3 mx-auto'> -->
+      <div class='col mx-auto' *ngFor="let video of videos">
+        <a class='link-dark link-underline-opacity-0'  [routerLink]="['/video/', video.id]">
+          <video [src]="getVideo(video)" id='{{ video.id }}' [style]="style" loop buffered controls>
+          </video>
+          <h2>{{ video.titulo}}</h2>
+          <h5>{{ video.descripcion}}</h5>
+        </a>
+      </div>
+  </div>
+</div>
+
+

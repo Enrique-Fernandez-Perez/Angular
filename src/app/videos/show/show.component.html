@@ -1,0 +1,63 @@
+
+    <div class='row mt-3 mb-3 mx-auto'>
+        <div class='col-12 col-sm-8 mb-3 mt-3 mx-auto'>
+            <!-- <video id='{{$video->id}}' width='<?= $width ?>%' loop onmouseover='playPause(this)' onmouseout='playPause(this)' controls autoplay> -->
+                <!-- <source src='{{asset( $video->files()->first()->file_path)}}' type='video/mp4'> -->
+            <!-- </video> -->
+            <span class="d-flex justify-content-center">
+                <!-- <h2>{{$video->titulo}}</h2> -->
+            </span>
+            <span class="d-flex justify-content-center">
+                <!-- <h5>{{$video->descripcion}}</h5> -->
+            </span>
+
+            <hr style='opacity:100%; height:8px;background-color:red !important; color:red !important;'>
+
+                    <!-- @foreach($video->comentarios as $coment) -->
+
+                        <span class="d-flex justify-content-center mx-auto mt-3 mb-3 p-2">
+                            <!-- <a href="mailto:{{$coment->user->email}}"><h5>{{$coment->user->email}}: </h5></a> -->
+                        </span>
+                        <span class="mx-auto mt-3 mb-3 p-2">
+                            <!-- <h5>{{$coment->comentario}}</h5> -->
+                        </span>
+                        <hr style='opacity:50%; height:2px;background-color:grey !important; color:grey !important;'>
+            <span class="d-flex justify-content-center">
+            <!-- <a class='link-dark bg-danger text-white link-underline-opacity-0 ' href='{{route('comentario.create', $video->id)}}'>Crear comentario </a> -->
+            </span>
+
+
+        </div>
+
+        <div class='col-12 col-sm-3 mx-auto'>
+            <!-- @foreach($videos as $vid) -->
+            <div class="d-flex mt-2 mb-2 mx-auto p-2">
+                        <!-- <a class='link-dark mt-2 mb-2 mx-auto p-2 link-underline-opacity-0' href='{{route('video.show', $vid->id)}}'> -->
+                            <!-- <video id='{{$vid->id}}' width='250rem' height="150rem" loop onmouseover='playPause(this)' onmouseout='playPause(this)' controls> -->
+                                <!-- <source src='{{asset( $vid->files()->first()->file_path)}}' type='video/mp4'> -->
+                            <!-- </video> -->
+                        <!-- </a> -->
+
+                        <!-- <a class='link-dark mt-2 mb-2 mx-auto p-2 link-underline-opacity-0' href='{{route('video.show', $vid->id)}}'> -->
+                            <span class="d-flex justify-content-center">
+                                <!-- <h2>{{$vid->titulo}}</h2> -->
+                            </span>
+                            <span class="d-flex justify-content-center">
+                                <!-- <h5>{{$vid->descripcion}}</h5> -->
+                            </span>
+                        <!-- </a> -->
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        function playPause(myVideo) {
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+
+    </script>

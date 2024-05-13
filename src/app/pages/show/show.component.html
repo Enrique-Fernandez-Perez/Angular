@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <h1>
+      {{video.titulo}}
+    </h1>
+
+    <video [src]="getVideo()" loop buffered controls autoplay>
+    </video>
+
+    <p> {{ video.descripcion }} </p>
+  </div>
+</div>
