@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "4526d438-397f-48ae-bf86-d33612998859",
+		"name": "PM_Youtube",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30622525"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/video",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE3Nzg3Mjg1LCJleHAiOjE3MTc3OTA4ODUsIm5iZiI6MTcxNzc4NzI4NSwianRpIjoiSkF2V3FuUm9kbHlUT1JUVyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.rtv5AeNqMFbkNea_GbDXCWPjUPXX4CrHug1oTv1lmLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "titulo",
+							"value": "lol",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "lol",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/G:/MÚSICA/MP  4/20 de Abril - Celtas Cortos - Raquel Eugenio (Xana Lavey) Cover.webm"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/video",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/canal/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE3Nzg3Mjg1LCJleHAiOjE3MTc3OTA4ODUsIm5iZiI6MTcxNzc4NzI4NSwianRpIjoiSkF2V3FuUm9kbHlUT1JUVyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.rtv5AeNqMFbkNea_GbDXCWPjUPXX4CrHug1oTv1lmLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "lol",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/canal/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"canal",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
