@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'videos',
     loadChildren : ()=>import('./videos/videos.module').then(m => m.VideosModule)
   },
+  
+  {
+    path: 'canal',
+    loadChildren : ()=>import('./canales/canales.module').then(m => m.CanalesModule)
+  },
 
   {
     path:'**',

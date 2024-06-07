@@ -5,6 +5,7 @@ import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Video } from '../interfaces/video';
+import { TokenService } from '../shared/token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,9 @@ export class VideosService {
     })
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+    private tokenService: TokenService
+  ) { }
 
   getIndex(): Observable<Video[]> {
     return this.httpClient.get<Video[]>(this.apiURL + '/videos/')
@@ -40,6 +43,7 @@ export class VideosService {
 
     headers.append('Content-Type','multipart/form-data');
     headers.append('Accept','application/json');
+    headers.append('Authorization','Bearer ' + this.tokenService.getToken());
 
     // console.log(headers);
 

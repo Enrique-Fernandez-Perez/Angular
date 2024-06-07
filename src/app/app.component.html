@@ -20,13 +20,13 @@
 
 
 <div class="d-flex" *ngIf="status">
-<a class="mx-3" href="">
+<a class="mx-3" [routerLink]="'/canal'">
   <h1>
     Canal
   </h1>
 </a>
 
-<a class="mx-3" [routerLink]="'videos/create'">
+<a class="mx-3" [routerLink]="'/videos/create'">
   <h1>
     Subir Video
   </h1>
