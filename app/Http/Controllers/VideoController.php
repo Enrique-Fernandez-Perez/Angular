@@ -8,6 +8,7 @@ use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Can;
+use PHPUnit\Exception;
 
 class VideoController extends Controller
 {
@@ -18,6 +19,16 @@ class VideoController extends Controller
         $this->middleware('auth:api', ['except' => ['index', 'show']]);
     }
 
+    public function hasCanal(Request $request){
+        try {
+            $canal = Canale::where('user_id', Auth::id());
+            $result =  $canal;
+            return response()->json(true, 200);
+        }
+        catch (Exception $e){
+            return response()->json(false, 200);
+        }
+    }
     public function show(Request $request, $id)
     {
         $video = Video::findOrFail($id)->load(['comentarios', 'files']);
@@ -80,7 +91,8 @@ class VideoController extends Controller
     public function delete(Request $request, $id=0)
     {
         Video::destroy($id);
-        return redirect('canal');
+//        return redirect('canal');
+        return response()->json('video eliminado',200);
     }
 
     public function create(Request $request)

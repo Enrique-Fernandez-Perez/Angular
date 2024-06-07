@@ -33,16 +33,18 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/', [\App\Http\Controllers\PagesController::class, 'home'])->name('home');
-Route::get('/search', [\App\Http\Controllers\PagesController::class, 'search'])->name('search');
+//Route::get('/', [\App\Http\Controllers\PagesController::class, 'home'])->name('home');
+//Route::get('/search', [\App\Http\Controllers\PagesController::class, 'search'])->name('search');
 
-Route::controller(\App\Http\Controllers\PagesController::class)->group(function () {
-    Route::get('search/{search}', 'search')->name('pages.search');
-});
+//Route::controller(\App\Http\Controllers\PagesController::class)->group(function () {
+//    Route::get('search/{search}', 'search')->name('pages.search');
+//});
 
 
 Route::controller(\App\Http\Controllers\VideoController::class)->group(function () {
     Route::post('video', 'store');
+
+    Route::get('hasCanal', 'hasCanal');
 //    Route::get('video/add', 'create')->name('video.create');
 //
 //    Route::get('video/edit/{id}', 'edit')->name('video.edit');
@@ -56,8 +58,6 @@ Route::controller(\App\Http\Controllers\VideoController::class)->group(function 
 
 Route::controller(\App\Http\Controllers\CanalController::class)->group(function () {
     Route::post('canal', 'store')->name('canal.store');
-
-    Route::get('canal/add', 'create')->name('canal.create');
 
     Route::get('canal', 'show')->name('canal.show');
 });
